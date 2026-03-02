@@ -533,16 +533,26 @@ function Contact() {
       const apiUrl = import.meta.env.VITE_API_URL
         ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api/contact`
         : '/api/contact';
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000); // 30s timeout
+
       const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify(form),
+        signal: controller.signal,
       });
+      clearTimeout(timeout);
       const data = await res.json();
       if (res.ok) { setStatus('success'); setMsg(data.message); setForm({ name: '', email: '', message: '' }); }
       else { setStatus('error'); setMsg(data.error); }
-    } catch {
-      setStatus('error'); setMsg('Network error. Please try again.');
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        setStatus('error'); setMsg('Request timed out. Render is waking up — please try again in 30 seconds!');
+      } else {
+        setStatus('error'); setMsg('Network error. Please try again.');
+      }
     }
   };
 
