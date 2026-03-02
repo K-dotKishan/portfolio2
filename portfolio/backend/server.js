@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
 const app = express();
-
-// Open CORS — allows all origins (safe for a portfolio contact form)
 app.use(cors());
 app.use(express.json());
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // POST /api/contact
 app.post('/api/contact', async (req, res) => {
@@ -18,20 +18,9 @@ app.post('/api/contact', async (req, res) => {
     }
 
     try {
-        const transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 587,
-            secure: false,
-            family: 4, // Force IPv4 — Render free tier doesn't support IPv6
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
-
-        await transporter.sendMail({
-            from: `"${name}" <${email}>`,
-            to: process.env.EMAIL_USER || 'kishansingh2882004@gmail.com',
+        await resend.emails.send({
+            from: 'Portfolio Contact <onboarding@resend.dev>',
+            to: 'kishansingh2882004@gmail.com',
             replyTo: email,
             subject: `Portfolio Contact from ${name}`,
             html: `
@@ -46,10 +35,10 @@ app.post('/api/contact', async (req, res) => {
       `,
         });
 
-        res.json({ success: true, message: 'Email sent successfully!' });
+        res.json({ success: true, message: 'Message sent successfully!' });
     } catch (err) {
         console.error('Email error:', err);
-        res.status(500).json({ error: 'Failed to send email. Please try again.' });
+        res.status(500).json({ error: 'Failed to send message. Please try again.' });
     }
 });
 
