@@ -4,26 +4,12 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 
 const app = express();
-app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests from localhost (dev), any vercel.app domain, or FRONTEND_URL
-        const allowed = [
-            'http://localhost:5173',
-            'http://localhost:3000',
-            process.env.FRONTEND_URL,
-        ].filter(Boolean);
-        if (!origin || allowed.includes(origin) || origin.endsWith('.vercel.app')) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: true,
-}));
+
+// Open CORS — allows all origins (safe for a portfolio contact form)
+app.use(cors());
 app.use(express.json());
 
-// POST /api/contact - sends email via Nodemailer
+// POST /api/contact
 app.post('/api/contact', async (req, res) => {
     const { name, email, message } = req.body;
 
@@ -32,13 +18,11 @@ app.post('/api/contact', async (req, res) => {
     }
 
     try {
-        // Configure transporter — uses Gmail by default.
-        // Set EMAIL_USER and EMAIL_PASS in your .env file.
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
                 user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS, // Use a Gmail App Password
+                pass: process.env.EMAIL_PASS,
             },
         });
 
