@@ -531,7 +531,7 @@ function Contact() {
     setStatus('loading');
     try {
       const apiUrl = import.meta.env.VITE_API_URL
-        ? `${import.meta.env.VITE_API_URL}/api/contact`
+        ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api/contact`
         : '/api/contact';
       const res = await fetch(apiUrl, {
         method: 'POST',
