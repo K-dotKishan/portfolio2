@@ -516,7 +516,7 @@ function Hero() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: '140px 60px 80px',
+      padding: '90px 60px 60px',
       position: 'relative',
       overflow: 'hidden'
     }}>
