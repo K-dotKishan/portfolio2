@@ -385,6 +385,7 @@ export default function CVPage() {
                 <Section title="Achievements" number="04">
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {[
+                            // the icons have been added with the help of a feature window + .
                             { icon: '🏆', title: 'IIT BHU Hackathon — Runner-Up', desc: 'Outperformed 1350+ teams with a MERN-based solution.', date: 'Feb 2026', color: '#ffd93d', link: 'https://drive.google.com/file/d/YOUR_IIT_BHU_CERT_ID/view' },
                             { icon: '💻', title: 'Technical DSA Proficiency', desc: 'Solved 200+ problems across LeetCode and GFG with a consistent streak.', date: 'Feb 2026', color: '#7efff5', link: null },
                             { icon: '🎤', title: 'Communication Excellence', desc: 'Twice awarded Certificates of Excellence.', date: 'Oct 2025', color: '#ff6b6b', link: 'https://drive.google.com/file/d/YOUR_COMM_CERT_ID/view' },
