@@ -1,5 +1,5 @@
 import React from 'react';
-
+// normal css has also been added for a good touch
 const cvCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
@@ -23,7 +23,6 @@ const cvCSS = `
     --font-mono: 'JetBrains Mono', monospace;
     --font-hero: 'Syne', sans-serif;
   }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -199,6 +198,7 @@ export default function CVPage() {
                         </div>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 240 }}>
+                           
                             {[
                                 { icon: '📧', label: 'kishansingh2882004@gmail.com', href: 'mailto:kishansingh2882004@gmail.com' },
                                 { icon: '📱', label: '+91 91427 16152', href: 'tel:+919142716152' },
