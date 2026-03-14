@@ -62,7 +62,7 @@ const cvCSS = `
     .cv-wrapper { box-shadow: none !important; border: none !important; }
   }
 `;
-
+// main styles are in tailwind css 
 function Tag({ text, color = '#7efff5' }) {
     return (
         <span style={{
