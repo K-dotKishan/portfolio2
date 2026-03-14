@@ -256,6 +256,7 @@ function Hero() {
 
 /* ─── Skills ─── */
 function Skills() {
+  // skills section are also displayed in arr of objects
   const cats = [
     { label: 'Languages', color: '#7efff5', items: ['C', 'C++', 'Java', 'JavaScript', 'Python', 'SQL', 'HTML5', 'CSS3'] },
     { label: 'Frameworks', color: '#ff6b6b', items: ['React.js', 'Node.js', 'Express.js', 'MERN', 'Tailwind CSS'] },
