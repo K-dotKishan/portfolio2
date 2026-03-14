@@ -265,6 +265,8 @@ function Skills() {
   ];
 
   return (
+
+    // adding the secion of position 
     <section id="skills" style={{ padding:'100px 60px',position:'relative' }}>
       <SectionHeader number="01" title="Technical Skills" />
 
