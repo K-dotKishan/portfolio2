@@ -386,6 +386,7 @@ function Navbar({ dark, onToggle }) {
           onMouseEnter={() => setCvHovered(true)}
           onMouseLeave={() => setCvHovered(false)}
           style={{
+            // style option font size 12px updating  information 
             fontFamily: 'var(--font-mono)',
             fontSize: 12,
             letterSpacing: 2,
@@ -526,6 +527,8 @@ function Hero() {
       <GlowingOrb color="var(--accent3)" size="400px" top="30%" left="20%" delay={4} />
 
       {/* Animated grid */}
+
+
       <div style={{
         position: 'absolute', inset: 0,
         backgroundImage: `
