@@ -43,6 +43,7 @@ const cvCSS = `
     100% { background-position: 0% 50%; }
   }
   @keyframes fadeUp {
+
     from { opacity: 0; transform: translateY(40px); }
     to   { opacity: 1; transform: translateY(0); }
   }

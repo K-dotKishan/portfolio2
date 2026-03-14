@@ -380,6 +380,8 @@ function Navbar({ dark, onToggle }) {
 
         {/* CV Button */}
         <a
+
+         // here are the drive link 
           href="https://drive.google.com/file/d/1Rrn5dhpD17vykgtZL6TnPpl78XXKf5F_/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
