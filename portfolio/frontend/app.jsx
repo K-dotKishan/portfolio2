@@ -159,7 +159,8 @@ function Hero() {
   const roleRef = useRef(0);
   const charRef = useRef(0);
   const deleting = useRef(false);
-
+ 
+  // here is the code for the typing effect
   useEffect(() => {
     const tick = () => {
       const role = roles[roleRef.current];
