@@ -5,6 +5,8 @@ import App from './App.jsx'
 import CVPage from './CVPage.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
+  // adding the information in github add Routes for cv page crucial change adding cv also
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
