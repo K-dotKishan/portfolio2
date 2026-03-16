@@ -156,6 +156,8 @@ function Navbar() {
 function Hero() {
   // here is the code for the typing effect
   // roles are stored in an array
+
+  // here is the code for the typing effect
   const [typed, setTyped] = useState('');
   const roles = ['Full Stack Developer', 'MERN Specialist', 'Problem Solver', 'Hackathon Runner-Up'];
   const roleRef = useRef(0);
