@@ -154,6 +154,7 @@ function Navbar() {
 
 /* ─── Hero ─── */
 function Hero() {
+  // here is the code for the typing effect
   const [typed, setTyped] = useState('');
   const roles = ['Full Stack Developer', 'MERN Specialist', 'Problem Solver', 'Hackathon Runner-Up'];
   const roleRef = useRef(0);
@@ -248,6 +249,7 @@ function Hero() {
       {/* Scroll indicator */}
       <div style={{ position:'absolute',bottom:40,left:60,fontFamily:'var(--font-mono)',fontSize:11,color:'var(--muted)',letterSpacing:3,display:'flex',alignItems:'center',gap:12 }}>
         <div style={{ width:1,height:60,background:'linear-gradient(to bottom, transparent, var(--accent))' }}/>
+        
         SCROLL
       </div>
     </section>
