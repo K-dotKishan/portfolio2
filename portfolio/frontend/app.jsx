@@ -256,6 +256,7 @@ function Hero() {
 
 /* ─── Skills ─── */
 function Skills() {
+  // iterate through map
   // skills section are also displayed in arr of objects
   const cats = [
     { label: 'Languages', color: '#7efff5', items: ['C', 'C++', 'Java', 'JavaScript', 'Python', 'SQL', 'HTML5', 'CSS3'] },
@@ -265,12 +266,13 @@ function Skills() {
   ];
 
   return (
-
+    
     // adding the secion of position 
     <section id="skills" style={{ padding:'100px 60px',position:'relative' }}>
       <SectionHeader number="01" title="Technical Skills" />
 
       <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))',gap:2,marginTop:60 }}>
+        
         {cats.map((cat,i) => (
           <div key={cat.label} style={{
             background:'var(--surface)',border:'1px solid var(--border)',
